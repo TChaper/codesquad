@@ -15,3 +15,9 @@ def cube(array):
         for j in i:
             print(i, end = " ")
         print("")
+
+def inven():
+    array = [["R","R","W"],["G","C","W"],["G","B","B"]]
+    return
+    cube(array)
+inven()
