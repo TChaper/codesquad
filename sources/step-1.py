@@ -16,5 +16,12 @@ if num == 0:
     print(obj)
 elif num > 0:
     num = num % length
+else:
+    num = abs(num) % length
+    if direction == "L" or direction == "l":
+        direction = "R"
+    elif direction == "R" or direction == "r":
+        direction = "L"
+        
 
 
