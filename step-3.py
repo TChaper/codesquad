@@ -4,7 +4,12 @@
 # 입력: 각 조작법을 한 줄로 입력받는다.
 # 출력: 큐브의 6면을 펼친 상태로 출력한다.
 # Q를 입력받으면 프로그램을 종료하고, 조작 받은 명령의 갯수를 출력시킨다.
-
+def cube(array, ent):
+  for i in array:
+    for j in i:
+      for k in j:
+       print(k, end = " ")
+    print("")
 def inven():
   array = {
   U : [['B', 'B', 'B'], ['B', 'B', 'B'], ['B', 'B', 'B']],
@@ -16,8 +21,5 @@ def inven():
   }
     cube(array, False)
     while True:
-        entry = input("CUBE>
-for i in array:
-  for j in i:
-    for k in j:
-      print(k, end = " ")
+       entry = input("CUBE> ").split()
+        for ent in entry:
