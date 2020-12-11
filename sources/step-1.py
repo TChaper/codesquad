@@ -11,3 +11,10 @@ length = len(obj)
 num = int(array[1]) # 3
 direction = array[2] # L
 result = " "
+
+if num == 0:
+    print(obj)
+elif num > 0:
+    num = num % length
+
+
