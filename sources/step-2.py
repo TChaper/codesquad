@@ -10,7 +10,7 @@
 # R R W
 # G C W
 # G B B
-def cube(array):
+def cube(array, ent):
     for i in array:
         for j in i:
             print(i, end = " ")
@@ -18,6 +18,25 @@ def cube(array):
 
 def inven():
     array = [["R","R","W"],["G","C","W"],["G","B","B"]]
-    return
-    cube(array)
+    cube(array, False)
+    entry = input().split()
+    for ent in entry:
+        if ent == "U":
+            array[0][0], array[0][1], array[0][2] = array[0][1], array[0][2], array[0][0]
+        elif ent == "U'":
+            array[0][0], array[0][1], array[0][2] = array[0][2], array[0][0], array[0][1]
+        elif ent == "R":
+            array[0][2], array[1][2], array[2][2] = array[1][2], array[2][2], array[0][2]
+        elif ent == "R'":
+            array[0][2], array[1][2], array[2][2] = array[2][2], array[0][2], array[1][2]
+        elif ent == "L":
+            array[0][0], array[1][0], array[2][0] = array[2][0], array[0][0], array[1][0]
+        elif ent == "L'":
+            array[0][0], array[1][0], array[2][0] = array[1][0], array[2][0], array[0][0]
+        elif ent == "B":
+            array[2][0], array[2][1], array[2][2] = array[2][2], array[2][0], array[2][1]
+        elif ent == "B'":
+            array[2][0], array[2][1], array[2][2] = array[2][1], array[2][2], array[2][0]
+        return
+        cube(array)
 inven()
