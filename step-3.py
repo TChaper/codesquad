@@ -10,6 +10,7 @@ def cube(array, ent):
       for k in j:
        print(k, end = " ")
     print("")
+    
 def inven():
   array = {
   U : [['B', 'B', 'B'], ['B', 'B', 'B'], ['B', 'B', 'B']],
@@ -19,7 +20,60 @@ def inven():
   L : [['W', 'W', 'W'], ['W', 'W', 'W'], ['W', 'W', 'W']],
   R : [[‘G’, 'G', 'G'], ['G', 'G', 'G'], ['G', 'G', 'G']]
   }
-    cube(array, False)
-    while True:
-       entry = input("CUBE> ").split()
-        for ent in entry:
+  cube(array, False)
+  while True:
+    entry = input("CUBE>").split()
+    for ent in entry:
+       if ent == "U":
+                array['F'][0][0], array['R'][0][0], array['B'][0][0], array['L'][0][0] = array['L'][0][0], array['F'][0][0], array['R'][0][0], array['B'][0][0]
+                array['F'][0][1], array['R'][0][1], array['B'][0][1], array['L'][0][1] = array['L'][0][1], array['F'][0][1], array['R'][0][1], array['B'][0][1]
+                array['F'][0][2], array['R'][0][2], array['B'][0][2], array['L'][0][2] = array['L'][0][2], array['F'][0][2], array['R'][0][2], array['B'][0][2]
+            elif ent == "U'":
+                array['F'][0][0], array['L'][0][0], array['B'][0][0], array['R'][0][0] = array['R'][0][0], array['F'][0][0], array['L'][0][0], array['B'][0][0]
+                array['F'][0][1], array['L'][0][1], array['B'][0][1], array['R'][0][1] = array['R'][0][1], array['F'][0][1], array['L'][0][1], array['B'][0][1]
+                array['F'][0][2], array['L'][0][2], array['B'][0][2], array['R'][0][2] = array['R'][0][2], array['F'][0][2], array['L'][0][2], array['B'][0][2]     
+            elif ent == "R":
+                array['F'][0][2], array['U'][0][2], array['B'][0][2], array['D'][0][2] = array['D'][0][2], array['F'][0][2], array['U'][0][2], array['B'][0][2]
+                array['F'][1][2], array['U'][1][2], array['B'][1][2], array['D'][0][2] = array['D'][1][2], array['F'][1][2], array['U'][1][2], array['B'][1][2]
+                array['F'][2][2], array['U'][2][2], array['B'][2][2], array['D'][0][2] = array['D'][2][2], array['F'][2][2], array['U'][2][2], array['B'][2][2]
+            elif ent == "R'":
+                array['F'][0][2], array['U'][0][2], array['B'][0][2], array['D'][0][2] = array['U'][0][2], array['B'][0][2], array['D'][0][2], array['F'][0][2]
+                array['F'][1][2], array['U'][1][2], array['B'][1][2], array['D'][0][2] = array['U'][1][2], array['B'][1][2], array['D'][1][2], array['F'][1][2]
+                array['F'][2][2], array['U'][2][2], array['B'][2][2], array['D'][0][2] = array['U'][2][2], array['B'][2][2], array['D'][2][2], array['F'][2][2]
+            elif ent == "L":
+                array['F'][0][0], array['U'][0][0], array['B'][0][0], array['D'][0][0] = array['U'][0][0], array['B'][0][0], array['D'][0][0], array['F'][0][0]
+                array['F'][1][0], array['U'][1][0], array['B'][1][0], array['D'][1][0] = array['U'][1][0], array['B'][1][0], array['D'][1][0], array['F'][1][0]
+                array['F'][2][0], array['U'][2][0], array['B'][2][0], array['D'][2][0] = array['U'][2][0], array['B'][2][0], array['D'][2][0], array['F'][2][0]
+            elif ent == "L'":
+                array['F'][0][0], array['U'][0][0], array['B'][0][0], array['D'][0][0] = array['D'][0][0], array['F'][0][0], array['U'][0][0], array['B'][0][0]
+                array['F'][1][0], array['U'][1][0], array['B'][1][0], array['D'][1][0] = array['D'][1][0], array['F'][1][0], array['U'][1][0], array['B'][1][0]
+                array['F'][2][0], array['U'][2][0], array['B'][2][0], array['D'][2][0] = array['D'][2][0], array['F'][2][0], array['U'][2][0], array['B'][2][0]
+            elif ent == "B":
+                array['U'][0][0], array['L'][0][0], array['D'][0][0], array['R'][0][2] = array['R'][0][2], array['U'][0][0], array['L'][0][0], array['D'][0][0]
+                array['U'][0][1], array['L'][1][0], array['D'][0][1], array['R'][1][2] = array['R'][1][2], array['U'][0][1], array['L'][1][0], array['D'][0][1]
+                array['U'][0][2], array['L'][2][0], array['D'][0][2], array['R'][2][2] = array['R'][2][2], array['U'][0][2], array['L'][2][0], array['D'][0][2]
+            elif ent == "B'":
+                array['U'][0][0], array['L'][0][0], array['D'][0][0], array['R'][0][2] = array['L'][0][0], array['D'][0][0], array['R'][0][2], array['U'][0][0]
+                array['U'][0][1], array['L'][1][0], array['D'][0][1], array['R'][1][2] = array['L'][1][0], array['D'][0][1], array['R'][1][2], array['U'][0][1]
+                array['U'][0][2], array['L'][2][0], array['D'][0][2], array['R'][2][2] = array['L'][2][0], array['D'][0][2], array['R'][2][2], array['U'][0][2]
+            elif ent == "F":
+                array['U'][2][0], array['L'][0][2], array['D'][2][0], array['R'][0][0] = array['L'][0][2], array['D'][2][0], array['R'][0][0], array['U'][2][0]
+                array['U'][2][1], array['L'][1][2], array['D'][2][1], array['R'][1][0] = array['L'][1][2], array['D'][2][1], array['R'][1][0], array['U'][2][1]
+                array['U'][2][2], array['L'][2][2], array['D'][2][2], array['R'][2][0] = array['L'][2][2], array['D'][2][2], array['R'][2][0], array['U'][2][2]
+            elif ent == "F'":
+                array['U'][2][0], array['L'][0][0], array['D'][2][0], array['R'][0][2] = array['R'][0][0], array['U'][2][0], array['L'][0][2], array['D'][2][0]
+                array['U'][2][1], array['L'][1][2], array['D'][2][1], array['R'][1][0] = array['R'][1][0], array['U'][2][1], array['L'][1][2], array['D'][2][1]
+                array['U'][2][2], array['L'][2][2], array['D'][2][2], array['R'][2][0] = array['R'][2][0], array['U'][2][2], array['L'][2][2], array['D'][2][2]
+            elif ent == "D":
+                array['F'][2][0], array['R'][2][0], array['B'][2][0], array['L'][2][0] = array['L'][2][0], array['F'][2][0], array['R'][2][0], array['B'][2][0]
+                array['F'][2][1], array['R'][2][1], array['B'][2][1], array['L'][2][1] = array['L'][2][1], array['F'][2][1], array['R'][2][1], array['B'][2][1]
+                array['F'][2][2], array['R'][2][2], array['B'][2][2], array['L'][2][2] = array['L'][2][2], array['F'][2][2], array['R'][2][2], array['B'][2][2]
+            elif ent == "D'":
+                array['F'][2][0], array['L'][2][0], array['B'][2][0], array['R'][2][0] = array['R'][2][0], array['F'][2][0], array['L'][2][0], array['B'][2][0]
+                array['F'][2][1], array['L'][2][1], array['B'][2][1], array['R'][2][1] = array['R'][2][1], array['F'][2][1], array['L'][2][1], array['B'][2][1]
+                array['F'][2][2], array['L'][2][2], array['B'][2][2], array['R'][2][2] = array['R'][2][2], array['F'][2][2], array['L'][2][2], array['B'][2][2]
+            elif ent == "Q":
+                print("BYE~")
+                return
+            cube(array,ent)
+inven()
