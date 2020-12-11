@@ -22,6 +22,11 @@ else:
         direction = "R"
     elif direction == "R" or direction == "r":
         direction = "L"
-        
+
+if direction == "L" or direction == "l":
+    result = obj[num:] + obj[:num]
+elif direction == "R" or direction == "r":
+    result = obj[-num:] + obj[:-num]
+print(result)
 
 
