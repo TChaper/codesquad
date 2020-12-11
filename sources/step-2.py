@@ -38,6 +38,8 @@ def inven():
                 array[2][0], array[2][1], array[2][2] = array[2][2], array[2][0], array[2][1]
             elif ent == "B'":
                 array[2][0], array[2][1], array[2][2] = array[2][1], array[2][2], array[2][0]
+            elif ent == "Q":
+                print("Bye~")
                 return
             cube(array,ent)
 inven()
