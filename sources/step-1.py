@@ -6,6 +6,8 @@
 # leapp
 
 array = input().split()
-obj = array[0]
-num = int(array[1])
-direction = array[2]
+obj = array[0] #apple
+length = len(obj)
+num = int(array[1]) # 3
+direction = array[2] # L
+result = " "
